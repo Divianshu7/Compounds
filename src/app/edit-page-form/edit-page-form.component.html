@@ -1,0 +1,31 @@
+<div class="content-box">
+    <h2>Edit</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            <label for="compoundName">Compound Name:</label>
+            <input id="compoundName" name="compoundName" type="text" [(ngModel)]="compoundName"/>
+
+        </div>
+        <div>
+            <label for="compoundDescription">Compound Description:</label>
+            <input id="compoundDescription" name="compoundDescription" type="text" [(ngModel)]="compoundDescription"/>
+            
+        </div>
+        <div>
+            <label for="imgSource">Img Source:</label>
+            <input id="imgSource" name="imgSource" type="text" [(ngModel)]="imgSource"/>
+            
+        </div>
+        <div>
+            <label for="imgAttribution">Img Attribution:</label>
+            <input id="imgAttribution" name="imgAttribution" type="text" [(ngModel)]="imgAttribution"/>
+            
+        </div>
+        <div>
+            <label for="dateModified">Date Modified:</label>
+            <input id="dateModified" name="dateModified" type="text" [(ngModel)]="dateModified"/>
+            
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</div>

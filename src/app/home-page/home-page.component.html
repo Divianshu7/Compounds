@@ -1,0 +1,31 @@
+<!-- <div>
+    <div class="content-box" *ngFor="let compound of compounds" >
+        <a routerLink="/compounds/{{compound.id}}">
+            <h3>{{compound.compoundName}}</h3>
+        </a>
+        <a routerLink="compounds/edit/{{compound.id}}">
+            <button>Edit</button>
+        </a>
+    </div>
+    <app-pagination 
+    [currentPage]="'currentPage" 
+    [limit]="5"
+    [total]="30"
+    (changePage)="changePage($event)"
+    ></app-pagination>
+</div> -->
+<div class="content-box" *ngFor="let compound of compounds | paginate: 
+ { itemsPerPage: 3, currentPage: p }" >
+ <a class="compound" routerLink="/compounds/{{compound.id}}">
+    <h3>{{compound.compoundName}}</h3>
+    <img src="{{compound.imgSource}}" />
+</a>
+<a routerLink="compounds/edit/{{compound.id}}">
+    <button>Edit</button>
+</a>
+  <hr>
+</div>
+<pagination-controls 
+(pageChange)="p = $event" 
+class="float-right">
+</pagination-controls>

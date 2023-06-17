@@ -1,0 +1,13 @@
+<div class="content-box" *ngIf="!isLoading">
+    <a routerLink="">
+        <button>Back</button>
+    </a>
+    <h2>{{compound?.compoundName}}</h2>
+    <p>{{compound?.compoundDescription}}</p>
+    <p>{{compound?.dateModified}}</p>
+    
+</div>
+<div class="content-box" *ngIf="isLoading">
+    <h3>Loading.....</h3>
+</div>
+
