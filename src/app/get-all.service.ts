@@ -16,13 +16,13 @@ export class GetAllService {
     private http:HttpClient
   ) { }
   getAll():Observable<Compound[]>{
-    return this.http.get<Compound[]>('http://localhost:8000/api/all') ;
+    return this.http.get<Compound[]>('https://compounds-backend.onrender.com/api/all') ;
   }
   getOneById(id:Number):Observable<Compound>{
-    return this.http.get<Compound>(`http://localhost:8000/api/find/${id}`)
+    return this.http.get<Compound>(`https://compounds-backend.onrender.com/api/find/${id}`)
   }
   editOneById(id:Number,editedCompound:Compound):Observable<Compound>{
-    return this.http.post<Compound>(`http://localhost:8000/api/edit/${id}`,editedCompound,httpOptions)
+    return this.http.post<Compound>(`https://compounds-backend.onrender.com/api/edit/${id}`,editedCompound,httpOptions)
   }
 
 }

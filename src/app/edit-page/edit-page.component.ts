@@ -8,6 +8,7 @@ import { GetAllService } from '../get-all.service';
   styleUrls: ['./edit-page.component.css']
 })
 export class EditPageComponent {
+  isLoading:boolean=true
   compoundName:string=''
   compoundDescription:string=''
   imgSource:string=''
@@ -23,7 +24,11 @@ export class EditPageComponent {
     let id =this.activatedRoute.snapshot.paramMap.get('id')!;
     let idd=parseInt(id)
     // this.compound=fakeCompounds.find(compound=>compound.id===idd)
-    this.service.getOneById(idd).subscribe(compound=>this.compound=compound)
+    this.service.getOneById(idd).subscribe(compound=>{
+      this.compound=compound
+      this.isLoading=false
+    })
+
   }
   onSubmit():void{
     alert('edited compound')

@@ -1,9 +1,12 @@
-<div class="content-box">
+<div class="content-box" *ngIf="!isLoading">
     <!-- <a routerLink="">
         <button>Back</button>
     </a> -->
     <h2>{{compound?.compoundName}}</h2>
     <p>{{compound?.compoundDescription}}</p>
-    <p>{{compound?.dateModified}}</p>
+    <img src="{{compound?.imgSource}}" />
     <app-edit-page-form></app-edit-page-form>
+</div>
+<div *ngIf="isLoading">
+    <h3>Loading....</h3>
 </div>
