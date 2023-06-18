@@ -3,8 +3,8 @@
         <button>Back</button>
     </a>
     <h2>{{compound?.compoundName}}</h2>
+    <img src="{{compound?.imgSource}}" />
     <p>{{compound?.compoundDescription}}</p>
-    <p>{{compound?.dateModified}}</p>
     
 </div>
 <div class="content-box" *ngIf="isLoading">
